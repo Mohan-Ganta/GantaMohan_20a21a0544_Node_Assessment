@@ -1,4 +1,3 @@
-
 const mysql = require('mysql');
 
 
@@ -47,12 +46,13 @@ function createTable() {
 
   connection.query(createTableQuery, (err, result) => {
     if (err) throw err;
-    console.log('Table "employees" created');
+    console.log('Table employees created');
 
     
-    connection.end((err) => {
-      if (err) throw err;
-      console.log('MySQL connection closed');
-    });
   });
 }
+
+module.exports = {
+    createDatabase,
+    createTable,
+  };
